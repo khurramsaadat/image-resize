@@ -20,7 +20,7 @@ export const Footer = () => (
       </div>
     </div>
     <div className="text-center mt-8 text-sm">
-      © 2023 Image Resizer. All rights reserved.
+      © 2025 Image Resizer. All rights reserved.
     </div>
   </footer>
 );

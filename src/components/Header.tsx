@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar } from "./Navbar";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => (
-  <header className="flex justify-between items-center py-4 px-8 bg-white dark:bg-black shadow-sm">
+  <header className="flex justify-between items-center py-4 px-8 bg-white dark:bg-black shadow-sm border-b border-gray-200 dark:border-gray-700">
     <Link href="/" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
       <Image
         src="/logo.webp"
@@ -14,6 +15,9 @@ export const Header = () => (
       />
       <h1 className="text-2xl font-bold text-black dark:text-zinc-50">Image Resizer</h1>
     </Link>
-    <Navbar />
+    <div className="flex items-center gap-4">
+      <Navbar />
+      <ThemeToggle />
+    </div>
   </header>
 );
