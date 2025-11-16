@@ -318,34 +318,34 @@ export const ImageResizer = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-4xl mx-auto p-3 sm:p-4 lg:p-6">
       <canvas ref={canvasRef} className="hidden" />
       
       {/* Upload Area */}
       {!selectedFile && (
         <div
-          className={`border-2 border-dashed rounded-lg p-12 text-center transition-colors cursor-pointer ${
+          className={`border-2 border-dashed rounded-lg p-6 sm:p-8 lg:p-12 text-center transition-all duration-300 cursor-pointer ${
             isDragOver 
-              ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
-              : 'border-gray-300 dark:border-gray-700 hover:border-blue-400'
+              ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20 transform scale-105' 
+              : 'border-gray-300 dark:border-gray-700 hover:border-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/50'
           }`}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
           onClick={() => fileInputRef.current?.click()}
         >
-          <div className="mb-4">
-            <svg className="w-12 h-12 text-blue-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="mb-3 sm:mb-4 animate-fade-in">
+            <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-blue-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
             </svg>
           </div>
-          <p className="text-gray-600 dark:text-gray-400 mb-2">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-2 animate-fade-in-up animation-delay-200">
             Drop your image here or <span className="text-blue-500 underline">browse</span>
           </p>
-          <p className="text-sm text-gray-500 dark:text-gray-500 mb-4">
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 mb-3 sm:mb-4 animate-fade-in-up animation-delay-400">
             Supports JPG, PNG, WebP, GIF (max 10MB)
           </p>
-          <button className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
+          <button className="bg-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-md hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 animate-fade-in-up animation-delay-600 min-h-[44px]">
             Select Image
           </button>
           <input
