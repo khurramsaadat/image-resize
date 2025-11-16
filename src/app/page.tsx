@@ -1,30 +1,8 @@
-import Image from "next/image";
+import { Header } from "@/components/Header"; // Import the Header component
+import { Footer } from "@/components/Footer"; // Import the Footer component
+import { ImageResizer } from "@/components/ImageResizer"; // Import the ImageResizer component
 
-// Placeholder for Header component
-const Header = () => (
-  <header className="flex justify-between items-center py-4 px-8 bg-white dark:bg-black shadow-sm">
-    <div className="flex items-center gap-4">
-      <Image
-        className="dark:invert"
-        src="/next.svg" // Placeholder logo, can be replaced with actual logo
-        alt="Logo"
-        width={40}
-        height={40}
-      />
-      <h1 className="text-2xl font-bold text-black dark:text-zinc-50">Image Resizer</h1>
-    </div>
-    <nav className="flex gap-4">
-      <a href="/" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-50">Resize</a>
-      <a href="/tools/compress" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-50">Compress</a>
-      <a href="/tools/convert" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-50">Convert</a>
-      <a href="/pricing" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-50">Pricing</a>
-      <a href="/auth/login" className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-50">Login</a>
-      <a href="/pricing" className="font-medium text-zinc-950 dark:text-zinc-50">Signup</a>
-    </nav>
-  </header>
-);
-
-// Placeholder for Hero Section
+// Hero Section with functional image resizer
 const HeroSection = () => (
   <section className="flex flex-col items-center justify-center text-center py-20 px-8 bg-zinc-50 dark:bg-gray-900">
     <h2 className="text-5xl font-bold leading-tight text-black dark:text-zinc-50 mb-4">
@@ -33,13 +11,12 @@ const HeroSection = () => (
     <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl">
       Upload your image (max 10 MB for free users) and transform it in seconds.
     </p>
-    <div className="border-2 border-dashed border-zinc-300 dark:border-zinc-700 rounded-lg p-12 w-full max-w-xl cursor-pointer hover:border-blue-500">
-      <p className="text-lg text-zinc-500 dark:text-zinc-400">Drag & Drop your image here</p>
-      <p className="text-sm text-zinc-400 dark:text-zinc-500 mt-2">or</p>
-      <button className="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
-        Select Image
-      </button>
+    
+    {/* Functional Image Resizer Component */}
+    <div className="w-full max-w-4xl">
+      <ImageResizer />
     </div>
+    
     <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
       Upgrade to Pro for larger files and more features.
     </p>
@@ -70,7 +47,7 @@ const FeatureHighlights = () => (
       <p className="text-zinc-600 dark:text-zinc-400">Secure SSL, images deleted within 6 hours.</p>
     </div>
     <div className="text-center">
-      <h3 className="text-xl font-semibold mb-2">It's Free</h3>
+      <h3 className="text-xl font-semibold mb-2">It&apos;s Free</h3>
       <p className="text-zinc-600 dark:text-zinc-400">No cost, no software, no watermarks.</p>
     </div>
   </section>
@@ -106,75 +83,50 @@ const ToolCategories = () => (
     <h2 className="text-4xl font-bold text-center mb-12">All Tools</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
-        <h3 className="text-2xl font-semibold mb-4">Image Tools</h3>
+        <h3 className="text-xl font-semibold mb-4">Image Tools</h3>
         <ul className="space-y-2">
-          <li><a href="/tools/resize" className="text-blue-600 hover:underline">Image Resizer</a></li>
-          <li><a href="/tools/compress" className="text-blue-600 hover:underline">Image Compressor</a></li>
-          <li><a href="/tools/crop" className="text-blue-600 hover:underline">Crop Image</a></li>
-          <li><a href="/tools/flip" className="text-blue-600 hover:underline">Flip Image</a></li>
-          <li><a href="/tools/rotate" className="text-blue-600 hover:underline">Rotate Image</a></li>
-          <li><a href="/tools/enlarge" className="text-blue-600 hover:underline">Image Enlarger</a></li>
-          <li><a href="/tools/color-picker" className="text-blue-600 hover:underline">Color Picker</a></li>
-          <li><a href="/tools/meme-generator" className="text-blue-600 hover:underline">Meme Generator</a></li>
+          <li><a href="/tools/resize" className="text-gray-600 dark:text-gray-400 hover:underline">Image Resizer</a></li>
+          <li><a href="/tools/compress" className="text-gray-600 dark:text-gray-400 hover:underline">Image Compressor</a></li>
+          <li><a href="/tools/crop" className="text-gray-600 dark:text-gray-400 hover:underline">Crop Image</a></li>
+          <li><a href="/tools/flip" className="text-gray-600 dark:text-gray-400 hover:underline">Flip Image</a></li>
+          <li><a href="/tools/rotate" className="text-gray-600 dark:text-gray-400 hover:underline">Rotate Image</a></li>
+          <li><a href="/tools/enlarge" className="text-gray-600 dark:text-gray-400 hover:underline">Image Enlarger</a></li>
+          <li><a href="/tools/color-picker" className="text-gray-600 dark:text-gray-400 hover:underline">Color Picker</a></li>
+          <li><a href="/tools/meme-generator" className="text-gray-600 dark:text-gray-400 hover:underline">Meme Generator</a></li>
         </ul>
       </div>
       <div>
-        <h3 className="text-2xl font-semibold mb-4">Conversion Tools</h3>
+        <h3 className="text-xl font-semibold mb-4">Conversion Tools</h3>
         <ul className="space-y-2">
-          <li><a href="/tools/pdf-to-jpg" className="text-blue-600 hover:underline">PDF to JPG</a></li>
-          <li><a href="/tools/heic-to-jpg" className="text-blue-600 hover:underline">HEIC to JPG</a></li>
-          <li><a href="/tools/svg-converter" className="text-blue-600 hover:underline">SVG Converter</a></li>
-          <li><a href="/tools/png-to-jpg" className="text-blue-600 hover:underline">PNG to JPG</a></li>
-          <li><a href="/tools/jpg-to-png" className="text-blue-600 hover:underline">JPG to PNG</a></li>
-          <li><a href="/tools/webp-to-jpg" className="text-blue-600 hover:underline">WebP to JPG</a></li>
+          <li><a href="/tools/pdf-to-jpg" className="text-gray-600 dark:text-gray-400 hover:underline">PDF to JPG</a></li>
+          <li><a href="/tools/heic-to-jpg" className="text-gray-600 dark:text-gray-400 hover:underline">HEIC to JPG</a></li>
+          <li><a href="/tools/svg-converter" className="text-gray-600 dark:text-gray-400 hover:underline">SVG Converter</a></li>
+          <li><a href="/tools/png-to-jpg" className="text-gray-600 dark:text-gray-400 hover:underline">PNG to JPG</a></li>
+          <li><a href="/tools/jpg-to-png" className="text-gray-600 dark:text-gray-400 hover:underline">JPG to PNG</a></li>
+          <li><a href="/tools/webp-to-jpg" className="text-gray-600 dark:text-gray-400 hover:underline">WebP to JPG</a></li>
         </ul>
       </div>
       <div>
-        <h3 className="text-2xl font-semibold mb-4">PDF Tools</h3>
+        <h3 className="text-xl font-semibold mb-4">PDF Tools</h3>
         <ul className="space-y-2">
-          <li><a href="/tools/compress-pdf" className="text-blue-600 hover:underline">Compress PDF</a></li>
-          <li><a href="/tools/pdf-converter" className="text-blue-600 hover:underline">PDF Converter</a></li>
-          <li><a href="/tools/image-to-pdf" className="text-blue-600 hover:underline">Image to PDF</a></li>
-          <li><a href="/tools/jpg-to-pdf" className="text-blue-600 hover:underline">JPG to PDF</a></li>
-          <li><a href="/tools/png-to-pdf" className="text-blue-600 hover:underline">PNG to PDF</a></li>
-          <li><a href="/tools/pdf-to-gif" className="text-blue-600 hover:underline">PDF to GIF</a></li>
+          <li><a href="/tools/compress-pdf" className="text-gray-600 dark:text-gray-400 hover:underline">Compress PDF</a></li>
+          <li><a href="/tools/pdf-converter" className="text-gray-600 dark:text-gray-400 hover:underline">PDF Converter</a></li>
+          <li><a href="/tools/image-to-pdf" className="text-gray-600 dark:text-gray-400 hover:underline">Image to PDF</a></li>
+          <li><a href="/tools/jpg-to-pdf" className="text-gray-600 dark:text-gray-400 hover:underline">JPG to PDF</a></li>
+          <li><a href="/tools/png-to-pdf" className="text-gray-600 dark:text-gray-400 hover:underline">PNG to PDF</a></li>
+          <li><a href="/tools/pdf-to-gif" className="text-gray-600 dark:text-gray-400 hover:underline">PDF to GIF</a></li>
         </ul>
       </div>
     </div>
   </section>
 );
 
-// Placeholder for Footer
-const Footer = () => (
-  <footer className="bg-gray-100 dark:bg-gray-800 text-zinc-600 dark:text-zinc-400 py-8 px-8">
-    <div className="max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <div className="flex gap-4">
-        <a href="/about" className="hover:underline">About Us</a>
-        <a href="/imprint" className="hover:underline">Imprint</a>
-        <a href="/privacy" className="hover:underline">Privacy</a>
-        <a href="/terms-of-service" className="hover:underline">Terms of Service</a>
-      </div>
-      <div className="flex items-center gap-4">
-        <span>Language:</span>
-        <select className="bg-transparent border-none text-zinc-600 dark:text-zinc-400 focus:outline-none">
-          <option>English</option>
-          <option>Español</option>
-          <option>Français</option>
-          <option>Deutsch</option>
-        </select>
-      </div>
-    </div>
-    <div className="text-center mt-8 text-sm">
-      © 2023 Image Resizer. All rights reserved.
-    </div>
-  </footer>
-);
-
+// Main page component that uses all the sections
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-zinc-50 dark:bg-black">
+    <div className="min-h-screen bg-white dark:bg-black">
       <Header />
-      <main className="flex-grow">
+      <main>
         <HeroSection />
         <FeatureHighlights />
         <HowToGuide />
