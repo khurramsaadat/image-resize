@@ -525,8 +525,9 @@ export const ImageResizer = () => {
                         {resizeOptions.percentage}%
                       </span>
                       <select
-                        value="px"
+                        defaultValue="px"
                         className="ml-2 px-2 py-1 border border-gray-300 dark:border-gray-600 rounded text-sm dark:bg-gray-700 dark:text-white"
+                        disabled
                       >
                         <option value="px">px</option>
                       </select>
@@ -635,8 +636,9 @@ export const ImageResizer = () => {
                     Unit
                   </label>
                   <select
-                    value="Pixels"
+                    defaultValue="Pixels"
                     className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+                    disabled
                   >
                     <option value="Pixels">Pixels</option>
                   </select>
