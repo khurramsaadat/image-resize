@@ -12,6 +12,7 @@ alwaysApply: true
 - Do not use && and use ; instead to avoid PowerShell syntax error.
 - DATES AND VERSIONS:
 - use playwrite MCP server, it is added in the settings/mcp servers.
+- Delete the images that playwright mcp saved after the test is completed.
 - Always read and understand @kh-rules.mdc file.
 - Before you writing any code read these rules and after that mention "understood Khurram's rules"
 - Do not make any changes, until you have 95% confidence that you know what to build, ask me follow up questions and clarifying questions that you have until you are confident that you know what to build.
